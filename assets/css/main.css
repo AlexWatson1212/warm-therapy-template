@@ -792,42 +792,45 @@ a {
   }
 
   /* =========================
-     LOGO FIX
-     ========================= */
+   LOGO FIX
+   ========================= */
 
-  .logo {
-    position: relative;
-    z-index: 800;
-  }
+.logo {
+  position: relative;
+  z-index: 800;
+}
 
-  .logo-image {
-    width: 166px;
-    position: relative;
-    z-index: 801;
-  }
+.logo-image {
+  width: 166px;
+  position: relative;
+  z-index: 801;
+}
 
-  .menu-open .logo {
-    position: fixed;
-    top: 14px;
-    left: 20px;
-    z-index: 800;
-  }
+.menu-open .logo {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 902;
+}
 
-  .menu-open .logo-image {
-    width: 166px;
-  }
+/* =========================
+   MENU BUTTON
+   ========================= */
 
-  /* =========================
-     MENU BUTTON
-     ========================= */
+.menu-button {
+  position: relative;
+  z-index: 900;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+}
 
-  .menu-button {
-    position: relative;
-    z-index: 900;
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-  }
+.menu-open .menu-button {
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  z-index: 901;
+}
 
   /* =========================
      MOBILE NAV
