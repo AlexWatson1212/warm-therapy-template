@@ -85,7 +85,8 @@ h2,
 .card h3,
 .step h3,
 .fee-card h3,
-.footer-title {
+.footer-title,
+.customise-card h3 {
   font-family: var(--serif);
   font-weight: 500;
 }
@@ -133,7 +134,8 @@ h2 {
 .step p,
 .fee-card p,
 .footer-copy,
-.footer-meta p {
+.footer-meta p,
+.customise-card p {
   color: var(--muted);
 }
 
@@ -147,7 +149,8 @@ h2 {
 .card p,
 .step p,
 .footer-copy,
-.footer-meta p {
+.footer-meta p,
+.customise-card p {
   margin: 0;
 }
 
@@ -350,6 +353,28 @@ a {
    CSS PART 2 — MAIN SECTIONS
    ========================================================= */
 
+/* Template notice */
+
+.template-notice {
+  padding: 14px 0;
+  background: var(--accent-dark);
+}
+
+.template-notice-inner {
+  text-align: center;
+}
+
+.template-notice p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.template-notice strong {
+  color: #fff;
+}
+
 /* Hero */
 
 .hero {
@@ -368,6 +393,23 @@ a {
 
 .hero-copy {
   max-width: 700px;
+}
+
+.template-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.template-meta span {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--pill);
+  background: var(--bg-panel);
+  color: var(--accent-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .hero-actions {
@@ -394,7 +436,9 @@ a {
   color: var(--muted);
 }
 
-.hero-image-wrap {
+.hero-image-wrap,
+.about-image-wrap,
+.image-break-wrap {
   position: relative;
 }
 
@@ -417,6 +461,22 @@ a {
   box-shadow: var(--shadow);
 }
 
+.image-label {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  padding: 8px 13px;
+  border-radius: var(--pill);
+  background: rgba(255, 253, 249, 0.92);
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 26px rgba(38, 56, 56, 0.14);
+}
+
 /* About */
 
 .about-section {
@@ -428,10 +488,6 @@ a {
   grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1fr);
   gap: 76px;
   align-items: center;
-}
-
-.about-image-wrap {
-  position: relative;
 }
 
 .about-image-wrap::before {
@@ -482,13 +538,22 @@ a {
   margin-bottom: 34px;
 }
 
-.cards {
+.cards,
+.customise-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
-.card {
+.cards {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.customise-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card,
+.customise-card {
   padding: 30px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -497,7 +562,8 @@ a {
 }
 
 .card h3,
-.step h3 {
+.step h3,
+.customise-card h3 {
   margin: 0 0 10px;
   font-size: 1.35rem;
   line-height: 1.25;
@@ -514,10 +580,19 @@ a {
 }
 
 .card-link:hover,
-.step-link:hover {
+.step-link:hover,
+.customise-card:hover {
   border-color: var(--border-strong);
   box-shadow: var(--shadow);
   transform: translateY(-4px);
+}
+
+/* Customise */
+
+.customise-section {
+  background:
+    radial-gradient(circle at 14% 14%, rgba(223, 229, 220, 0.65), transparent 30%),
+    var(--bg-soft);
 }
 
 /* How */
@@ -794,7 +869,8 @@ a {
     max-width: 560px;
   }
 
-  .cards {
+  .cards,
+  .customise-grid {
     grid-template-columns: 1fr;
   }
 
@@ -838,6 +914,14 @@ a {
 
   section {
     padding: 52px 0;
+  }
+
+  .template-notice {
+    padding: 12px 0;
+  }
+
+  .template-notice p {
+    font-size: 0.86rem;
   }
 
   .site-header {
@@ -956,6 +1040,17 @@ a {
     line-height: 1.58;
   }
 
+  .template-meta {
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .template-meta span {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .hero-actions {
     gap: 10px;
     margin-top: 24px;
@@ -991,6 +1086,12 @@ a {
     box-shadow: var(--shadow-soft);
   }
 
+  .image-label {
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.66rem;
+  }
+
   .about-grid,
   .how-grid,
   .fees-grid {
@@ -1020,11 +1121,13 @@ a {
     margin-bottom: 22px;
   }
 
-  .cards {
+  .cards,
+  .customise-grid {
     gap: 10px;
   }
 
-  .card {
+  .card,
+  .customise-card {
     padding: 20px 0;
     border-width: 0 0 1px;
     border-radius: 0;
@@ -1032,17 +1135,20 @@ a {
     box-shadow: none;
   }
 
-  .card h3 {
+  .card h3,
+  .customise-card h3 {
     margin-bottom: 6px;
     font-size: 1.18rem;
   }
 
-  .card p {
+  .card p,
+  .customise-card p {
     font-size: 0.94rem;
     line-height: 1.55;
   }
 
-  .card-link:hover {
+  .card-link:hover,
+  .customise-card:hover {
     box-shadow: none;
     transform: none;
   }
