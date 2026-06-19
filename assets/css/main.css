@@ -757,6 +757,7 @@ a {
 }
 
 @media (max-width: 700px) {
+
   html {
     scroll-padding-top: 74px;
   }
@@ -790,17 +791,47 @@ a {
     min-height: 70px;
   }
 
+  /* =========================
+     LOGO FIX
+     ========================= */
+
+  .logo {
+    position: relative;
+    z-index: 800;
+  }
+
   .logo-image {
+    width: 166px;
+    position: relative;
+    z-index: 801;
+  }
+
+  .menu-open .logo {
+    position: fixed;
+    top: 14px;
+    left: 20px;
+    z-index: 800;
+  }
+
+  .menu-open .logo-image {
     width: 166px;
   }
 
+  /* =========================
+     MENU BUTTON
+     ========================= */
+
   .menu-button {
     position: relative;
-    z-index: 700;
+    z-index: 900;
     display: inline-flex;
     width: 40px;
     height: 40px;
   }
+
+  /* =========================
+     MOBILE NAV
+     ========================= */
 
   .main-nav {
     position: fixed;
@@ -809,18 +840,24 @@ a {
     width: 100vw;
     height: 100vh;
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+
     gap: 0;
     padding: 104px 24px 40px;
+
     background: #fffdf9;
+
     opacity: 0;
     visibility: hidden;
     transform: translateX(100%);
     pointer-events: none;
+
     overflow-y: auto;
+
     transition:
       opacity 0.25s ease,
       visibility 0.25s ease,
@@ -837,11 +874,15 @@ a {
   .main-nav a {
     width: 100%;
     min-height: 58px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 0 16px;
+
     border-bottom: 1px solid var(--border);
+
     color: var(--text);
     font-size: 1.22rem;
     font-weight: 800;
@@ -853,14 +894,23 @@ a {
     width: 100%;
     max-width: 420px;
     min-height: 58px;
+
     justify-content: center;
+
     margin: 36px auto 0;
+
     border: 0;
     border-radius: var(--pill);
+
     background: var(--accent);
     color: white !important;
+
     font-size: 0.9rem !important;
   }
+
+  /* =========================
+     HERO
+     ========================= */
 
   .hero {
     padding: 38px 0 50px;
