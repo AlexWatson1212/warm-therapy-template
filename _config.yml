@@ -1,7 +1,7 @@
 title: Sarah James Therapy
 description: A calm, clear space for therapy, reflection, and emotional support.
 
-url: "https://sarahjames-therapy.co.uk/"
+url: "https://sarahjames-therapy.co.uk"
 baseurl: ""
 
 permalink: /:title/
@@ -32,3 +32,4 @@ exclude:
   - .bundle
   - .jekyll-cache
   - netlify.toml
+
